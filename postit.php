@@ -1,4 +1,4 @@
-<?
+<?php
 
 include("postitify.php");
 include("misc.php");
@@ -64,7 +64,8 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
 
 
 
-<?
+<?php
+
 if ($image !== false)
 {
   $show_form = false;
@@ -81,6 +82,7 @@ if ($image !== false)
   echo ".containerPostIt{width:".$largeurPatern."px;}\n";
   echo "</style>";
 }
+
 ?>
 
 
@@ -96,7 +98,7 @@ if ($image !== false)
   <input name="image" type="file" />
   <input type="submit" value="Postitify me" />
 </form>
-<? } ?>
+<?php } ?>
 
 	<div class="head">
 		<h3>Taille des post-it</h3>
@@ -122,12 +124,12 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 		}
 	}
 }
-/* Ce que ça devrait être.
+/* Ce que ça devrait être. */
 for($ligne=0;$ligne<$nbrLine;$ligne++){
 	for($col=0;$col<$nbrCol;$col++){
 		echo '<div class="postit c'.$image["image"][$ligne][$col].'"></div>';
 	}
-} */
+} 
 
 ?>
 </div>
@@ -136,7 +138,8 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 	
 	<div class="colLeft">
 		<h3>Vous devrez utiliser :</h3>
-			<?php
+			<?php 
+
 				$total = 0;
 				for($b=0;$b<$nbrColors;$b++){
 					echo '<div class="line">';
@@ -177,11 +180,11 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 			<h3>Bonus :</h3>
 			<label for="grid">Afficher la grille</label>
 			<input id="grid" type="checkbox">
-			<a class="reduceme" href="http://annuaireblogbd.com/postitwar/postit.php?id=<? echo idify($image); ?>">Link</a>
-			<a class="reduceme" href="postit.php?id=<? echo idify($image); ?>&download=1&size=40">Download</a>
-			<input type="text" value='<img src="http://annuaireblogbd.com/postitwar/postit.php?id=<? echo idify($image); ?>&download=1&size=2"/>'</input>
-			<img src="postit.php?id=<? echo idify($image); ?>&download=1&size=2"/>
-			<img src="<? echo encode_original($image["original"]); ?>"/>
+			<a class="reduceme" href="http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>">Link</a>
+			<a class="reduceme" href="postit.php?id=<?php echo idify($image); ?>&download=1&size=40">Download</a>
+			<input type="text" value='<img src="http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>'</input>
+			<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
+			<img src="<?php echo encode_original($image["original"]); ?>"/>
 		</form>
 	
 	</div>

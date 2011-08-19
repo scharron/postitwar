@@ -1,4 +1,4 @@
-<?
+<?php
 
 function compress($str)
 {
