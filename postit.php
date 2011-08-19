@@ -89,15 +89,6 @@ if ($image !== false)
 
 <?php include "r/php/ttl.php"; ?>
 
-<?php if (false && $show_form){ ?>
-<form enctype="multipart/form-data" action="postit.php" method="post">
-  <input type="hidden" name="options" value="" />
-  <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
-  <input name="image" type="file" />
-  <input type="submit" value="Postitify me" />
-</form>
-<? } ?>
-
 	<div class="head">
 		<h3>Taille des post-it</h3>
 		<div id="slider"></div>
