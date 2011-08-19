@@ -107,6 +107,11 @@ if ($image !== false)
 <div class="containerPostIt" data-largeur="<?php echo $nbrCol; ?>">
 <?php /* Affichage du pattern */
 
+// Initialize array
+$coul = array();
+for($a=0;$a<$nbrColors;$a++)
+  $coul[$a] = 0;
+
 for($ligne=0;$ligne<$nbrLine;$ligne++){
 	for($col=0;$col<$nbrCol;$col++){
 		echo '<div class="postit c'.$image["image"][$ligne][$col].'"></div>';
@@ -132,6 +137,7 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 	<div class="colLeft">
 		<h3>Vous devrez utiliser :</h3>
 			<?php
+				$total = 0;
 				for($b=0;$b<$nbrColors;$b++){
 					echo '<div class="line">';
 					echo isset($coul[$b]) ? $coul[$b] : 0;
