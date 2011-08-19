@@ -115,12 +115,6 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 		}
 	}
 }
-/* Ce que ça devrait être. */
-for($ligne=0;$ligne<$nbrLine;$ligne++){
-	for($col=0;$col<$nbrCol;$col++){
-		echo '<div class="postit c'.$image["image"][$ligne][$col].'"></div>';
-	}
-} 
 
 ?>
 </div>
