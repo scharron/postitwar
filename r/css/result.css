@@ -7,29 +7,22 @@
 .gridded.editable .dr{outline:none;}
 
 .hover,
-.gridded .hover{background:#999;}
+.gridded .hover{background:url(i/hover.png) repeat 0 0;}
 
 .head{clear:both;border-bottom:1px solid #999;margin-bottom:10px;overflow:hidden;}
 .head h3{float:left;}
 
-.containerPostIt{position:relative;overflow:hidden;display:block;margin:0 auto;}
+.containerPostIt{position:relative;display:block;margin:0 auto;}
 #original{position:absolute;top:-2%;left:-3%;width:100%;opacity:0;filter:alpha(opacity=0);z-index:2;}
-.editable #original{z-index:0;}
+.editable #original{z-index:-1;}
 
 .editable .dr{
 -webkit-box-shadow: 1px 3px 6px #444;
 -moz-box-shadow: 1px 3px 6px #444;
 box-shadow: 1px 3px 6px #444;
 }
-.editable .dr span{display:block;width:100%;height:100%;
-background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 36%, rgba(0,0,0,0) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(36%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
-background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
-background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
-background: linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
-}
+.editable .dr span{display:block;width:100%;height:100%;}
+
 .editable .ui-draggable-dragging{z-index:999;
 -webkit-transform: rotate(4deg);
 -moz-transform: rotate(4deg);
@@ -40,6 +33,7 @@ rotation:4deg;
 box-shadow: 4px 4px 8px #444;
 }
 
+.ui-draggable{position:relative;}
 .console{clear:both;border-top:1px solid #000;}
 .console .line{display:inline-block;width:100%;font-size:35px;font-weight:bold;text-align:right;}
 .console .line .post{float:right;margin-left:10px;}
@@ -64,3 +58,81 @@ box-shadow: 4px 4px 8px #444;
 .wslide{padding:5px 2px;background:#999;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;overflow:hidden;}
 .wslide span{float:left;font-size:10px;line-height:30px;padding:0 3px;}
 .wslide #slider2{float:left;margin:0;}
+
+
+
+
+
+
+
+
+.editable .sh1 span{
+background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 36%, rgba(0,0,0,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(36%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
+background: linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%);
+}
+
+.editable .sh2 span{
+background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(34%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
+background: linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);
+}
+
+.editable .sh3 span{
+background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
+background: linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%);
+}
+
+.editable .sh4 span{
+background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(60%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.4)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.4) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.4) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.4) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 );
+background: linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.4) 100%);
+}
+
+.editable .sh5 span{
+background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 46%, rgba(0,0,0,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(46%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 46%,rgba(0,0,0,0) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 46%,rgba(0,0,0,0) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 46%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
+background: linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 46%,rgba(0,0,0,0) 100%);
+}
+
+.editable .rot1{
+-webkit-transform: rotate(1deg);
+-moz-transform: rotate(1deg);
+-o-transform:rotate(1deg);
+rotation:1deg;
+}
+
+.editable .rot2{
+-webkit-transform: rotate(-1deg);
+-moz-transform: rotate(-1deg);
+-o-transform:rotate(-1deg);
+rotation:-1deg;
+}
+
+.editable .rot3{
+-webkit-transform: rotate(2deg);
+-moz-transform: rotate(2deg);
+-o-transform:rotate(2deg);
+rotation:2deg;
+}

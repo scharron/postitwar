@@ -111,9 +111,8 @@ for($a=0;$a<$nbrColors;$a++)
 
 for($ligne=0;$ligne<$nbrLine;$ligne++){
 	for($col=0;$col<$nbrCol;$col++){
-		echo '<div class="postit c'.$image["image"][$ligne][$col].'';
-		if($image["image"][$ligne][$col]!=$nbrColors){echo " dr";}else{echo " white";}
-		echo '"><span></span></div>';
+		if($image["image"][$ligne][$col]!=$nbrColors){$droppableStateClass = " dr sh".rand(1,5)." rot".rand(1,3);}else{$droppableStateClass = " white";}
+		echo '<div class="postit '.$aleaShadow.' c'.$image["image"][$ligne][$col].''.$droppableStateClass.'"><span></span></div>';
  		for($a=0;$a<$nbrColors;$a++){
 			if($a==$image["image"][$ligne][$col]){
 				$coul[$a]++;// Pour obtenir le nombre de postit par couleurs 

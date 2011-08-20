@@ -1,9 +1,10 @@
 function canEdit(){
 
 	var sizeCase = $(".dr").width();
+
 	$(".dr").draggable({
 		revert:"invalid",
-		revertDuration: 0
+		revertDuration: 10
 	});
 
 	$(".white").droppable({
@@ -15,8 +16,10 @@ function canEdit(){
 			ui.draggable.removeClass("ui-draggable-dragging");
 			ui.draggable.removeClass("ui-draggable");
 			var ClassThisPostit = ui.draggable.attr("class");
+			ui.draggable.attr("class","postit white ui-droppable").removeAttr("style").css({"width":sizePI,"height":sizePI,"position":"relative"});
 			$(this).attr("class",ClassThisPostit);
-			ui.draggable.attr("class","postit white").removeAttr("style").css({"width":sizePI,"height":sizePI});
+			$(".dr").droppable("disable");
+			$(".white").droppable("enable");
 			canEdit();
 		}
 	})
