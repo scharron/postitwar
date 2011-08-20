@@ -71,7 +71,6 @@ if ($image !== false)
   $show_form = false;
   $nbrLine = sizeof($image["image"]);
   $nbrCol  = sizeof($image["image"][0]);
-  echo $nbrCol."/".$nbrLine;
   $largeurPatern = $nbrCol*50;
   echo "<style>\n";
   $nbrColors = sizeof($image["colors"])-1;
@@ -115,12 +114,12 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 		}
 	}
 }
-/* Ce que ça devrait être. */
+/* Ce que ça devrait être. 
 for($ligne=0;$ligne<$nbrLine;$ligne++){
 	for($col=0;$col<$nbrCol;$col++){
 		echo '<div class="postit c'.$image["image"][$ligne][$col].'"></div>';
 	}
-} 
+} */
 
 ?>
 </div>
@@ -169,21 +168,37 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 	<div class="colRight">
 		<form action="postit.php" method="post">
 			<h3>Bonus :</h3>
-			<label for="grid">Afficher la grille</label>
-			<input id="grid" type="checkbox">
-			<a class="reduceme" href="http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>">Link</a>
-			<a class="reduceme" href="postit.php?id=<?php echo idify($image); ?>&download=1&size=40">Download</a>
-			<input type="text" value='<img src="http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>'</input>
+			<div class="block">
+				<label for="grid">Afficher la grille</label>
+				<input id="grid" type="checkbox">
+			</div>
+			
+			<!--
+			<a class="reduceme" href="http://annuaireblogbd.com/postitwar/postit.php?id=<?php //echo idify($image); ?>">Link</a>
+			<a class="reduceme" href="postit.php?id=<?php //echo idify($image); ?>&download=1&size=40">Download</a>
+			-->
+			
+			<div class="block"><?php echo $nbrCol." colonnes <br />".$nbrLine." lignes "; ?></div>
+			
+			<div class="block copyLink">
+				<input type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2' />
+			</div>
+			
 			<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
+			
 			<img src="<?php echo encode_original($image["original"]); ?>"/>
+			
+			
 		</form>
 	
 	</div>
 	
 </div>
 
+
 <script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=samuelcharron&apiKey=R_0f4c2ebe6ac9ebfc5b401a32f8e53275"></script>
 <script type="text/javascript" charset="utf-8">
+
 function bitly_answer(elt, data){
   elt.href = data.results[elt.href].shortUrl;
 }
