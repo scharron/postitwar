@@ -76,11 +76,11 @@ if ($image !== false)
   $nbrColors = sizeof($image["colors"])-1;
   for($o=0;$o<$nbrColors;$o++){
 	$color[$o] = $image["colors"][$o][0].",".$image["colors"][$o][1].",".$image["colors"][$o][2];
-    echo ".c".$o."{background-color:rgb(".$color[$o].");}\n";
+    echo ".c".$o."{background-color:rgb(".$color[$o].");border:1px solid rgb(".$color[$o].");}\n";
   }
-	echo "::selection{background:rgb(".$color[0].");}";
-	echo "::-moz-selection{background:rgb(".$color[0].");}";
-	echo "::-webkit-selection{background:rgb(".$color[0].");}";
+	echo "::selection{background:rgb(".$color[0].");}\n";
+	echo "::-moz-selection{background:rgb(".$color[0].");}\n";
+	echo "::-webkit-selection{background:rgb(".$color[0].");}\n";
 	echo ".containerPostIt{width:".$largeurPatern."px;}\n";
 	echo "</style>";
 }
@@ -98,7 +98,7 @@ if ($image !== false)
 		<div class="slider" id="slider1"></div>
 	</div>
 
-<div class="containerPostIt" data-largeur="<?php echo $nbrCol; ?>">
+<div class="containerPostIt" data-largeur="<?php echo $nbrCol; ?>" sizePI="48">
 
 <img id="original" src="<?php echo encode_original($image["original"]); ?>"/>
 
@@ -111,7 +111,9 @@ for($a=0;$a<$nbrColors;$a++)
 
 for($ligne=0;$ligne<$nbrLine;$ligne++){
 	for($col=0;$col<$nbrCol;$col++){
-		echo '<div class="postit c'.$image["image"][$ligne][$col].'"></div>';
+		echo '<div class="postit c'.$image["image"][$ligne][$col].'';
+		if($image["image"][$ligne][$col]!=$nbrColors){echo " dr";}else{echo " white";}
+		echo '"><span></span></div>';
  		for($a=0;$a<$nbrColors;$a++){
 			if($a==$image["image"][$ligne][$col]){
 				$coul[$a]++;// Pour obtenir le nombre de postit par couleurs 
