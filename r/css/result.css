@@ -5,7 +5,8 @@
 .head{clear:both;border-bottom:1px solid #999;margin-bottom:10px;overflow:hidden;}
 .head h3{float:left;}
 
-.containerPostIt{overflow:hidden;display:block;margin:0 auto;}
+.containerPostIt{position:relative;overflow:hidden;display:block;margin:0 auto;}
+#original{position:absolute;top:-2%;left:-3%;width:100%;opacity:0;filter:alpha(opacity=0);}
 
 .console{clear:both;border-top:1px solid #000;}
 .console .line{display:inline-block;width:100%;font-size:35px;font-weight:bold;text-align:right;}
@@ -16,13 +17,18 @@
 .head,
 .console{min-width:800px;}
 
-.block{display:block;margin:6px 0;border-bottom:1px solid #999;padding:5px 0;}
+.block{display:block;margin:6px 0;border-bottom:1px solid #999;padding:5px 0;overflow:hidden;}
 .block label{cursor:pointer;}
-.size{color:#999;font-size:12px;}
+.size{font-size:14px;}
 .size b{font-weight:bold;font-size:20px;color:#000;}
 .copyLink input{width:350px;padding:5px 0;border:1px dotted #999;}
 
 .colRight{float:left;}
-#slider{width:200px;margin:10px 0 0 20px;float:left;padding-right:25px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+.slider{width:200px;margin:10px 0 0 20px;float:left;padding-right:25px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 .ui-widget-content{border:1px solid #ddd;background:#eee;color:#333;}
 .ui-state-default{display:block;position:relative;border:1px solid #ccc;background:#f6f6f6;outline:none;width:25px;height:25px;}
+
+.slideImgOriginal{border-bottom:0;}
+.wslide{padding:5px 2px;background:#999;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;overflow:hidden;}
+.wslide span{float:left;font-size:10px;line-height:30px;padding:0 3px;}
+.wslide #slider2{float:left;margin:0;}

@@ -95,11 +95,13 @@ if ($image !== false)
 
 	<div class="head">
 		<h3>Taille des post-it</h3>
-		<div id="slider"></div>
-	
+		<div class="slider" id="slider1"></div>
 	</div>
 
 <div class="containerPostIt" data-largeur="<?php echo $nbrCol; ?>">
+
+<img id="original" src="<?php echo encode_original($image["original"]); ?>"/>
+
 <?php /* Affichage du pattern */
 
 // Initialize array
@@ -162,6 +164,9 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 				echo 'Vous devrez mettre <b>'.$temps.'</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)';
 				echo '</div>';
 			?>
+			
+			<div class="size block">Grille de <?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
+			
 	</div>
 	<div class="colRight">
 		<form action="postit.php" method="post">
@@ -171,22 +176,31 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 				<input id="grid" type="checkbox">
 			</div>
 			
+			<div class="block">
+				<label for="edit">Editer en live !</label>
+				<input id="edit" type="checkbox">
+			</div>
+			
 			<!--
 			<a class="reduceme" href="http://annuaireblogbd.com/postitwar/postit.php?id=<?php //echo idify($image); ?>">Link</a>
 			<a class="reduceme" href="postit.php?id=<?php //echo idify($image); ?>&download=1&size=40">Download</a>
 			-->
 			
-			<div class="size block"><?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
-			
-			<div class="block copyLink">
-				<label for="urlImg">Copier-coller l'url :</label>
-				<input id="urlImg" readonly="readonly" type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2' />
+			<div class="block slideImgOriginal">
+				<span>Afficher l'image originale en surrimpression</span>
+				<div class="wslide">
+					<span>Transparent</span><div class="slider" id="slider2"></div><span>Opaque</span>
+				</div>
 			</div>
 			
-			<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
+			<div class="block">
+				<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
+			</div>
 			
-			<img src="<?php echo encode_original($image["original"]); ?>"/>
-			
+			<div class="block copyLink">
+				<label for="urlImg">Copiez coller l'url de la page :</label>
+				<input id="urlImg" readonly="readonly" type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2' />
+			</div>
 			
 		</form>
 	
@@ -194,7 +208,7 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 	
 </div>
 
-
+<!--
 <script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=samuelcharron&apiKey=R_0f4c2ebe6ac9ebfc5b401a32f8e53275"></script>
 <script type="text/javascript" charset="utf-8">
 
@@ -208,7 +222,7 @@ $(function(){
   });
 });
 </script>
-
+-->
 
 
 
