@@ -116,10 +116,10 @@ function hsv($c)
   $hue = $hh * 60;
 }
 
-function postitify2($filename, $options)
+function postitify($filename, $options)
 {
   // Use image_region if we want
-  $origin = new Image2($filename);
+  $origin = new Image($filename);
   if (! $origin->is_valid)
     return false;
 
@@ -143,7 +143,7 @@ function postitify2($filename, $options)
     $ratio_x *= 1.8;
 
   // Reduced image (pixelisation)
-  $reduced = new Image2(null, 0, 0, $origin->rect->w / $ratio_x, $origin->rect->h / $ratio_y);
+  $reduced = new Image(null, 0, 0, $origin->rect->w / $ratio_x, $origin->rect->h / $ratio_y);
   if (! $reduced->is_valid)
     return false;
   if (! $options["resample"])
@@ -209,34 +209,4 @@ function postitify2($filename, $options)
 
   $ret = array("colors" => $colors, "image" => $image, "original" => $filename);
   return $ret;
-}
-
-function postitify($filename, $options)
-{
-  // Use image_region if we want
-  $origin = new Image($filename);
-  if (! $origin->is_valid)
-    return false;
-
-  $colors = $options["colors"];
-
-  foreach ($colors as &$color)
-    if ($color == array(255, 255, 255))
-      unset($color);
-  $colors[] = array(255, 255, 255);
-
-
-  $ratio_x = (float)$origin->rect->w / $options["wall_size"][0];
-  $ratio_y = (float)$origin->rect->h / $options["wall_size"][1];
-  
-  $ratio_x = max($ratio_x, $ratio_y);
-  $ratio_y = max($ratio_x, $ratio_y);
-
-  if ($options["large"])
-    $ratio_x *= 1.8;
-
-  // Reduced image (pixelisation)
-  $reduced = new Image(null, 0, 0, $origin->w / $ratio_x, $origin->h / $ratio_y);
-  if (! $reduced->is_valid)
-    return false;
 }
