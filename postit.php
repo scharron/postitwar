@@ -37,7 +37,7 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
       setdef($options["wall_size"], array(20, 20));
       setdef($options["image_region"], "-1x-1+0+0");
       setdef($options["large"], false);
-      $image = postitify2($filename, $options);
+      $image = postitify($filename, $options);
     }
   }
 }
