@@ -25,43 +25,6 @@ function create_from($filename)
   return $handle;
 }
 
-class Image2
-{
-  function __construct($filename, $x = 0, $y = 0, $w = -1, $h = -1)
-  {
-    $this->filename = $filename;
-
-    $this->is_valid = true;
-
-    if ($filename !== null)
-    {
-      $this->handle = create_from($filename);
-      $rw = imagesx($this->handle);
-      $rh = imagesy($this->handle);
-      $this->rect = new Rect((int)$x, (int)$y, (int)$rw, (int)$rh);
-    }
-    else
-    {
-      $this->rect = new Rect((int)$x, (int)$y, (int)$w, (int)$h);
-      $this->handle = imagecreate($this->rect->w, $this->rect->h);
-      imagealphablending($this->handle, true);
-      $white = imagecolorallocate($this->handle, 255, 255, 255);
-      imagefill($this->handle, 0, 0, $white);
-    }
-
-    if ($this->handle === false)
-    {
-      $this->is_valid = false;
-      return;
-    }
-  }
-
-  var $filename;
-  var $rect;
-  var $handle;
-  var $is_valid;
-}
-
 class Image
 {
   function __construct($filename, $x = 0, $y = 0, $w = -1, $h = -1)
