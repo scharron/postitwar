@@ -116,7 +116,6 @@ function hsv($c)
   $hue = $hh * 60;
 }
 
-
 function postitify($filename, $options)
 {
   // Use image_region if we want
