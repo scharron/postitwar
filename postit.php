@@ -71,7 +71,7 @@ if ($image !== false)
   $show_form = false;
   $nbrLine = sizeof($image["image"]);
   $nbrCol  = sizeof($image["image"][0]);
-  $largeurPatern = $nbrCol*50;
+  $largeurPatern = ($nbrCol*50)+1;
   echo "<style>\n";
   $nbrColors = sizeof($image["colors"])-1;
   for($o=0;$o<$nbrColors;$o++){
@@ -98,31 +98,41 @@ if ($image !== false)
 		<div class="slider" id="slider1"></div>
 	</div>
 
-<div class="containerPostIt" data-largeur="<?php echo $nbrCol; ?>" sizePI="48">
+<div class="wrapContainerPI">
+	<div class="containerPostIt" data-largeur="<?php echo $nbrCol; ?>" sizePI="48">
 
-<img id="original" src="<?php echo encode_original($image["original"]); ?>"/>
+	<?php /* Affichage du pattern */
 
-<?php /* Affichage du pattern */
+	// Initialize array
+	$coul = array();
+	echo '<div class="origin">';
+	for($a=0;$a<$nbrColors;$a++){
+		echo '<div class="wPostit c'.$a.'"><div class="postit dr creatorz c'.$a.'"><span></span></div></div>';
+	  $coul[$a] = 0;
+	}
+	echo "</div>";
 
-// Initialize array
-$coul = array();
-for($a=0;$a<$nbrColors;$a++)
-  $coul[$a] = 0;
-
-for($ligne=0;$ligne<$nbrLine;$ligne++){
-	for($col=0;$col<$nbrCol;$col++){
-		if($image["image"][$ligne][$col]!=$nbrColors){$droppableStateClass = " dr sh".rand(1,5)." rot".rand(1,3);}else{$droppableStateClass = " white";}
-		echo '<div class="postit '.$aleaShadow.' c'.$image["image"][$ligne][$col].''.$droppableStateClass.'"><span></span></div>';
- 		for($a=0;$a<$nbrColors;$a++){
-			if($a==$image["image"][$ligne][$col]){
-				$coul[$a]++;// Pour obtenir le nombre de postit par couleurs 
+	
+	echo '<div class="core">';
+	echo '<img id="original" src="'.encode_original($image["original"]).'"/>';
+	
+	for($ligne=0;$ligne<$nbrLine;$ligne++){
+		for($col=0;$col<$nbrCol;$col++){
+			if($image["image"][$ligne][$col]!=$nbrColors){$droppableStateClass = " dr sh".rand(1,5)." rot".rand(1,3);}else{$droppableStateClass = " white";}
+			echo '<div class="postit '.$aleaShadow.' c'.$image["image"][$ligne][$col].''.$droppableStateClass.'"><span></span></div>';
+			for($a=0;$a<$nbrColors;$a++){
+				if($a==$image["image"][$ligne][$col]){
+					$coul[$a]++;// Pour obtenir le nombre de postit par couleurs 
+				}
 			}
 		}
 	}
-}
+	echo '</div>';
 
+	?>
 
-?>
+	<div class="trash"></div>
+	</div>
 </div>
 
 <div class="console">
@@ -134,7 +144,7 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 				$total = 0;
 				for($b=0;$b<$nbrColors;$b++){
 					echo '<div class="line">';
-					echo isset($coul[$b]) ? $coul[$b] : 0;
+					echo isset($coul[$b]) ? '<span class="number">'.$coul[$b].'</span>' : 0;
 					echo '<div class="post c'.$b.'"><span></span></div><br />';
 					echo '</div>';
 					$total += $coul[$b];
@@ -161,12 +171,12 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 				$temps = $heure.":".$minutes.":".$secondes;
 				
 				
-				echo '<div class="total">Un total de <b>'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
+				echo '<div class="total">Un total de <b class="priceTotal">'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
 				echo 'Vous devrez mettre <b>'.$temps.'</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)';
 				echo '</div>';
 			?>
 			
-			<div class="size block">Grille de <?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
+		<div class="size block">Grille de <?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
 			
 	</div>
 	<div class="colRight">
