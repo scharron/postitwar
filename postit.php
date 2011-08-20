@@ -75,11 +75,14 @@ if ($image !== false)
   echo "<style>\n";
   $nbrColors = sizeof($image["colors"])-1;
   for($o=0;$o<$nbrColors;$o++){
-    $color[$o] = $image["colors"][$o][0].",".$image["colors"][$o][1].",".$image["colors"][$o][2];
+	$color[$o] = $image["colors"][$o][0].",".$image["colors"][$o][1].",".$image["colors"][$o][2];
     echo ".c".$o."{background-color:rgb(".$color[$o].");}\n";
   }
-  echo ".containerPostIt{width:".$largeurPatern."px;}\n";
-  echo "</style>";
+	echo "::selection{background:rgb(".$color[0].");}";
+	echo "::-moz-selection{background:rgb(".$color[0].");}";
+	echo "::-webkit-selection{background:rgb(".$color[0].");}";
+	echo ".containerPostIt{width:".$largeurPatern."px;}\n";
+	echo "</style>";
 }
 
 ?>
@@ -173,10 +176,11 @@ for($ligne=0;$ligne<$nbrLine;$ligne++){
 			<a class="reduceme" href="postit.php?id=<?php //echo idify($image); ?>&download=1&size=40">Download</a>
 			-->
 			
-			<div class="block"><?php echo $nbrCol." colonnes <br />".$nbrLine." lignes "; ?></div>
+			<div class="size block"><?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
 			
 			<div class="block copyLink">
-				<input type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2' />
+				<label for="urlImg">Copier-coller l'url :</label>
+				<input id="urlImg" readonly="readonly" type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2' />
 			</div>
 			
 			<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
@@ -199,8 +203,8 @@ function bitly_answer(elt, data){
 }
 
 $(function(){
-  $.each($(".reduceme"), function(idx, elt) {
-    BitlyClient.shorten(elt.href, function(data) { bitly_answer(elt, data); });
+  $.each($(".reduceme"), function(idx, elt){
+    BitlyClient.shorten(elt.href, function(data){ bitly_answer(elt, data); });
   });
 });
 </script>

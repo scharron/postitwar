@@ -23,6 +23,10 @@ var largeurPostIt = wrapPostIt.attr("data-largeur");
 		}
 	});
 
+	$("#urlImg").click(function(e){
+		e.preventDefault();
+		$(this).select();
+	})
 	
 	checkCheck(wrapPostIt);
 	$("#grid").change(function(){
