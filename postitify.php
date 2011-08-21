@@ -133,11 +133,12 @@ function postitify($filename, $options)
   $colors[] = array(255, 255, 255);
 
 
-  $ratio_x = (float)$origin->rect->w / $options["wall_size"][0];
-  $ratio_y = (float)$origin->rect->h / $options["wall_size"][1];
+  //$ratio_x = (float)$origin->rect->w / $options["wall_size"][0];
+  $ratio_y = (float)$origin->rect->h / $options["wall_size"];
   
-  $ratio_x = max($ratio_x, $ratio_y);
-  $ratio_y = max($ratio_x, $ratio_y);
+  //$ratio_x = max($ratio_x, $ratio_y);
+  //$ratio_y = max($ratio_x, $ratio_y);
+  $ratio_x = $ratio_y;
 
   if ($options["large"])
     $ratio_x *= 1.8;

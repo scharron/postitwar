@@ -73,7 +73,7 @@ function idify($obj)
   global $encoding_data;
   $x = count($obj["image"]);
   $y = count($obj["image"][0]);
-  $str = $obj["original"] . "." . $x . "." . $y . ".";
+  $str = /*$obj["original"] . "." . */$x . "." . $y . ".";
   $tmp = array();
   foreach ($obj["colors"] as $color)
   {
@@ -103,11 +103,11 @@ function unidify($str)
   $str = deurlify($str);
 
   $arr = explode(".", $str);
-  $original = $arr[0];
-  $x = $arr[1];
-  $y = $arr[2];
-  $color_str = $arr[3];
-  $image_str = $arr[4];
+  /*$original = $arr[0];*/
+  $x = $arr[0];
+  $y = $arr[1];
+  $color_str = $arr[2];
+  $image_str = $arr[3];
 
   $colors = array();
   foreach (explode("_", $color_str) as $color)

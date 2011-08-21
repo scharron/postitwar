@@ -21,6 +21,9 @@ function initDrag(){
 }
 
 function initDragBack(){
+	var FirstColor = $(".colRight .post:not(.default)").css("background-color");
+	$(".futurHeight").css({"background-color":FirstColor});
+	
 	$('.dr2').draggable({
 		revert: true
 	});
@@ -151,7 +154,7 @@ $(document).ready(function(){
 	})
 
 	$(".hwjs").hide();
-
+		
 	$(".addNew").click(function(e){
 		e.preventDefault();
 		$("#colorpicker").show();
@@ -208,5 +211,21 @@ $(document).ready(function(){
 			f.linkTo(this);
 		})
 	;
+	
+	$(".futurHeight").height(20*12);
+	
+	$("#slider3").slider({
+		value: 20,
+		min: 1,
+		max: 30,
+		slide: function(event,ui){
+			var percent = ui.value*12;
+			var mm = (ui.value*78)/10;
+			$(".explainHeight .ttlHeight").html(mm);
+			$(".explainHeight .nbr").html(ui.value);
+			$(".futurHeight").css({"height":percent});
+			$(".wall_size").val(ui.value);
+		}
+	});
 	
 });

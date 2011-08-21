@@ -1,0 +1,19 @@
+.bottomBox{border-top:none;overflow:hidden;padding:0 0 20px 0;}
+
+
+.pushFile{text-align:center;overflow:hidden;margin-top:0;}
+.pushFile .fileInput{border:1px solid #000;font-size:20px;font-weight:bold;margin-bottom:10px;}
+.pushFile .nextStep{float:left;margin:20px;}
+.pushFile .prevStep{width:450px;margin-left:0;}
+.pushFile .nextStep{margin-right:0;}
+
+.wslide{overflow:hidden;border-top:5px solid #ddd;padding:10px;display:block;}
+.wslide label{float:left;width:400px;text-align:left;}
+.demoFuturHeight{position:relative;float:right;width:300px;height:350px;}
+.demoFuturHeight .profil{position:absolute;bottom:0;height:300px;width:300px;background:url(i/business.png) 0 15px no-repeat;display:block;z-index:2;}
+.demoFuturHeight .futurHeight{position:absolute;bottom:0;width:100px;left:100px;height:10px;}
+.explainHeight{width:400px;text-align:left;font-size:1.5em;margin:10px 0 0 0;border-top:1px solid #000;overflow:hidden;}
+
+.slider{width:300px;margin:80px 0 0 30px;height:70px;padding-right:26px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+.ui-widget-content{border:1px solid #ddd;background:#000;color:#fff;}
+.ui-state-default{display:block;position:relative;border:1px solid #777;background:#fff;outline:none;width:25px;height:68px;}

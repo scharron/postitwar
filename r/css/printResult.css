@@ -2,12 +2,15 @@
 #original,
 footer,
 .post span,
+.sn,
 .block{display:none;}
 
 .colLeft{min-height:0px;}
 .containerPostIt{display:block;}
 
-.postit span{text-indent:0;font-weight:bold;}
+.postit{width:20px !important;height:20px !important;}
+.postit span{text-indent:0;font-size:12px;font-weight:bold;}
+.clear{clear:both;}
 
 .hfp{float:left;display:block;}
 

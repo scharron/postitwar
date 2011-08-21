@@ -77,9 +77,12 @@ box-shadow: 4px 4px 8px #444;
 .block label{cursor:pointer;}
 .size{font-size:14px;}
 .size b{font-weight:bold;font-size:20px;color:#000;}
-.copyLink input{width:350px;padding:5px 0;border:1px dotted #999;}
+.copyLink input{float:right;width:360px;padding:5px 5px 5px 0;border:1px dotted #999;}
+.copyLink img{float:left;margin:5px 5px 5px 0;}
 .last{border-bottom:none;}
 .last a{text-decoration:none;}
+.miniature label{padding-right:20px;}
+
 
 .colRight{float:left;}
 .slider{width:200px;margin:10px 0 0 20px;float:left;padding-right:26px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}

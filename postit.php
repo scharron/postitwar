@@ -32,7 +32,14 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
       validate_colors($options["colors"], array("90-175-253", "255-195-250", "252-254-79", "196-239-170"));
       setdef($options["postit_size"], 40);
       setdef($options["resample"], true);
-      setdef($options["wall_size"], array(20, 20));
+      setdef($options["wall_size"], 20);
+      if (isset($_POST["wall_size"]))
+      {
+        $val = (int)$_POST["wall_size"];
+        if ($val <= 0 || $val > 50)
+          $val = 20;
+        $options["wall_size"] = $val;
+      }
       setdef($options["image_region"], "-1x-1+0+0");
       setdef($options["large"], false);
       $image = postitify($filename, $options);
@@ -46,7 +53,7 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Post-It Wall Generator</title>
+	<title>Post-It War Generator</title>
 	<link rel="meta" type="application/rdf+xml" title="FOAF" href="/foaf.rdf">
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
@@ -89,6 +96,23 @@ if ($image !== false)
 
 ?>
 
+<?php include "r/php/jsForGG.php"; ?>
+
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  {lang: 'fr'}
+	</script>
+
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-25260998-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function(){
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
 
 </head>
 <body>
@@ -116,7 +140,8 @@ if ($image !== false)
 
 	
 	echo '<div class="core">';
-	echo '<img id="original" src="'.encode_original($image["original"]).'"/>';
+        if (isset($image["original"]))
+	  echo '<img id="original" src="'.encode_original($image["original"]).'"/>';
 	
 	for($ligne=0;$ligne<$nbrLine;$ligne++){
 		for($col=0;$col<$nbrCol;$col++){
@@ -134,6 +159,7 @@ if ($image !== false)
 				}
 			}
 		}
+		echo '<div class="clear"></div>';
 	}
 	echo '</div>';
 
@@ -187,7 +213,14 @@ if ($image !== false)
 			?>
 			
 		<div class="size block">Grille de <?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
-			
+	
+		
+		<!--
+		<div class="">
+			postit.php?id=<?php echo idify($image); ?>
+		</div>
+		-->
+		
 	</div>
 	<div class="colRight">
 		<form action="postit.php" method="post">
@@ -203,24 +236,29 @@ if ($image !== false)
 			</div>
 			
 			<!--
-			<a class="reduceme" href="http://annuaireblogbd.com/postitwar/postit.php?id=<?php //echo idify($image); ?>">Link</a>
-			<a class="reduceme" href="postit.php?id=<?php //echo idify($image); ?>&download=1&size=40">Download</a>
+			<a class="reduceme" href="http://postitwar.me/postit.php?id=<?php echo idify($image); ?>">Link</a>
+			<a class="reduceme" href="postit.php?id=<?php echo idify($image); ?>&download=1&size=40">Download</a>
 			-->
 			
+                        <?php if (isset($image["original"])) { ?>
 			<div class="block slideImgOriginal">
 				<span>Afficher l'image originale en surrimpression</span>
 				<div class="wslide">
 					<span>Transparent</span><div class="slider" id="slider2"></div><span>Opaque</span>
 				</div>
 			</div>
-			
-			<div class="block">
-				<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
-			</div>
+                        <?php } ?>
 
 			<div class="block copyLink">
 				<label for="urlImg">Copiez coller l'url de la page :</label>
-				<input id="urlImg" readonly="readonly" type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php //echo idify($image); ?>&download=1&size=2' />
+				<input id="urlImg" class="reduceme" readonly="readonly" type="text" value='http://postitwar.me/postit.php?id=<?php echo idify($image); ?>' />
+			</div>
+			
+			<div class="block miniature">
+				<label>Aperçu miniature :</label>
+				<a href="http://postitwar.me/postit.php?id=<?php echo idify($image); ?>&download=1&size=2">
+					<img src="postit.php?id=<?php echo idify($image); ?>"/>
+				</a>
 			</div>
 			
 			<div class="block last">
@@ -228,7 +266,7 @@ if ($image !== false)
 					Imprimer
 				</span>
 				<a href="index.php" class="nextStep">
-					Recommencer
+					Une nouvelle image !
 				</a>
 			</div>
 			
@@ -247,12 +285,12 @@ if ($image !== false)
 <script type="text/javascript" charset="utf-8">
 
 function bitly_answer(elt, data){
-  elt.href = data.results[elt.href].shortUrl;
+  elt.value = data.results[elt.value].shortUrl;
 }
 
 $(function(){
   $.each($(".reduceme"), function(idx, elt){
-    BitlyClient.shorten(elt.href, function(data){ bitly_answer(elt, data); });
+    BitlyClient.shorten(elt.value, function(data){ bitly_answer(elt, data); });
   });
 });
 </script>

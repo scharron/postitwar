@@ -125,7 +125,7 @@ var largeurPostIt = wrapPostIt.attr("data-largeur");
 	$(".print").click(function(e){
 		e.preventDefault();
 		window.print();
-	})	
+	})
 	
 	checkCheck(wrapPostIt);
 	
