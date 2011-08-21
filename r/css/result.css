@@ -14,7 +14,7 @@
 
 .wrapContainerPI{text-align:center;}
 .containerPostIt{position:relative;display:block;margin:0 auto;padding:40px 0 40px 70px;display:inline-block;}
-.core{position:relative;}
+.core{position:relative;display:inline-block;}/* Le display inline-block est nécessaire pour que l'image en absolute se positionne correctement :s */
 #original{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;filter:alpha(opacity=0);z-index:2;}
 .editable #original{z-index:-1;}
 

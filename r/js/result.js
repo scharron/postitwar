@@ -101,7 +101,7 @@ var largeurPostIt = wrapPostIt.attr("data-largeur");
 		slide: function(event,ui){
 			var w = largeurPostIt*(ui.value+2)+1+"px";/* Le +2 pour les bordures du postit et le +1 pour la border du conteneur */
 			wrapPostIt.attr("sizePI",ui.value);
-			console.log(ui.value);
+			//console.log(ui.value);
 			wrapPostIt.css({"width":w});
 			$(".postit").css({"width":ui.value+"px","height":ui.value+"px"});
 		}
