@@ -158,3 +158,5 @@ box-shadow: 1px 3px 6px #444;
 .pushFile{text-align:center;}
 .pushFile .fileInput{border:1px solid #000;font-size:20px;font-weight:bold;margin-bottom:10px;}
 .pushFile .nextStep{float:left;margin:20px;}
+
+footer{display:block;clear:both;border-top:1px solid #999;width:100%;font-size:10px;font-family:Arial;}

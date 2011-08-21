@@ -217,6 +217,10 @@ if ($image !== false)
 	
 	</div>
 	
+	<?php
+		include "r/php/footer.php";
+	?>
+	
 </div>
 
 <!--
