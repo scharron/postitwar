@@ -14,9 +14,7 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
     $image = unidify($_GET["id"]);
     if (isset($_GET["download"]))
       download($image, $_GET["size"]);
-  }
-  else
-  {
+  }else{
     $filename = $_FILES["image"]["tmp_name"];
     if ($_POST["options"] === "")
       $_POST["options"] = "{}";
@@ -53,11 +51,15 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
 	<link rel="stylesheet" type="text/css" href="r/css/result.css" />
+	<link rel="stylesheet" type="text/css" href="r/css/printResult.css" media="print" />
 	<script type="text/javascript" src="r/js/jq1.6.2.js"></script>
 	<script type="text/javascript" src="r/js/jq.ui.1.8.15.js"></script>
 	<script type="text/javascript" src="r/js/farbtastic.js"></script>
 	<script type="text/javascript" src="r/js/g.js"></script>
 	<script type="text/javascript" src="r/js/result.js"></script>
+	<meta name="Description" content="Page de résultat ou l'image est matché avec les postits">
+	<meta name="Robots" content="all">
+	<meta name="Keywords" content="postit, bureau, résultat, génération, nombre, coût, post-it, investissement">
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -76,7 +78,7 @@ if ($image !== false)
   $nbrColors = sizeof($image["colors"])-1;
   for($o=0;$o<$nbrColors;$o++){
 	$color[$o] = $image["colors"][$o][0].",".$image["colors"][$o][1].",".$image["colors"][$o][2];
-    echo ".c".$o."{background-color:rgb(".$color[$o].");border:1px solid rgb(".$color[$o].");}\n";
+    echo ".c".$o."{background:rgb(".$color[$o].");border:1px solid rgb(".$color[$o].");}\n";
   }
 	echo "::selection{background:rgb(".$color[0].");}\n";
 	echo "::-moz-selection{background:rgb(".$color[0].");}\n";
@@ -118,8 +120,14 @@ if ($image !== false)
 	
 	for($ligne=0;$ligne<$nbrLine;$ligne++){
 		for($col=0;$col<$nbrCol;$col++){
-			if($image["image"][$ligne][$col]!=$nbrColors){$droppableStateClass = " dr sh".rand(1,5)." rot".rand(1,3);}else{$droppableStateClass = " white";}
-			echo '<div class="postit '.$aleaShadow.' c'.$image["image"][$ligne][$col].''.$droppableStateClass.'"><span></span></div>';
+			if($image["image"][$ligne][$col]!=$nbrColors){
+				$droppableStateClass = " dr sh".rand(1,5)." rot".rand(1,3);
+			}else{
+				$droppableStateClass = " white";
+			}
+			echo '<div class="postit '.$aleaShadow.' c'.$image["image"][$ligne][$col].''.$droppableStateClass.'"><span>';
+			if($image["image"][$ligne][$col]!=$nbrColors){echo "c".$image["image"][$ligne][$col];}
+			echo '</span></div>';
 			for($a=0;$a<$nbrColors;$a++){
 				if($a==$image["image"][$ligne][$col]){
 					$coul[$a]++;// Pour obtenir le nombre de postit par couleurs 
@@ -145,6 +153,7 @@ if ($image !== false)
 				for($b=0;$b<$nbrColors;$b++){
 					echo '<div class="line">';
 					echo isset($coul[$b]) ? '<span class="number">'.$coul[$b].'</span>' : 0;
+					echo '<span class="hfp">color'.$b.' : </span>';
 					echo '<div class="post c'.$b.'"><span></span></div><br />';
 					echo '</div>';
 					$total += $coul[$b];
@@ -169,9 +178,10 @@ if ($image !== false)
 				if($heure < "10"){$heure = "0".$heure;}
 
 				$temps = $heure.":".$minutes.":".$secondes;
-				
-				
-				echo '<div class="total">Un total de <b class="priceTotal">'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
+
+				echo '<div class="total">';
+				echo '<h3>Vous allez coûter à votre entreprise :</h3>';
+				echo 'Un total de <b>'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
 				echo 'Vous devrez mettre <b>'.$temps.'</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)';
 				echo '</div>';
 			?>
@@ -207,10 +217,19 @@ if ($image !== false)
 			<div class="block">
 				<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
 			</div>
-			
+
 			<div class="block copyLink">
 				<label for="urlImg">Copiez coller l'url de la page :</label>
-				<input id="urlImg" readonly="readonly" type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php echo idify($image); ?>&download=1&size=2' />
+				<input id="urlImg" readonly="readonly" type="text" value='http://annuaireblogbd.com/postitwar/postit.php?id=<?php //echo idify($image); ?>&download=1&size=2' />
+			</div>
+			
+			<div class="block last">
+				<span class="nextStep print">
+					Imprimer
+				</span>
+				<a href="index.php" class="nextStep">
+					Recommencer
+				</a>
 			</div>
 			
 		</form>
@@ -223,7 +242,7 @@ if ($image !== false)
 	
 </div>
 
-<!--
+
 <script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=samuelcharron&apiKey=R_0f4c2ebe6ac9ebfc5b401a32f8e53275"></script>
 <script type="text/javascript" charset="utf-8">
 
@@ -237,7 +256,7 @@ $(function(){
   });
 });
 </script>
--->
+
 
 
 

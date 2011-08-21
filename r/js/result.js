@@ -8,7 +8,7 @@ function calcAll(){
 		total += color[i];
 	}
 	$("b.priceTotal").text(total);
-	console.log(total*0.015);
+	//console.log(total*0.015);
 }
 
 function canEdit(){
@@ -51,7 +51,6 @@ function canEdit(){
 	
 	$(".trash").droppable({
 		accept:'.dr',
-		over:function(event,ui){$(this).addClass("toTrash");},
 		drop:function(event,ui){
 			var sizePI = $(".containerPostIt").attr("sizePI");
 			var pi = ui.draggable;
@@ -64,6 +63,7 @@ function canEdit(){
 			}						
 			$(".dr").droppable("disable");
 			$(".white").droppable("enable");
+			canEdit();
 			calcAll();
 		}		
 	})
@@ -121,6 +121,11 @@ var largeurPostIt = wrapPostIt.attr("data-largeur");
 		e.preventDefault();
 		$(this).select();
 	})
+
+	$(".print").click(function(e){
+		e.preventDefault();
+		window.print();
+	})	
 	
 	checkCheck(wrapPostIt);
 	

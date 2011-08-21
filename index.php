@@ -3,13 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>Post-It Wall Generator</title>
-	<link rel="meta" type="application/rdf+xml" title="FOAF" href="/foaf.rdf">
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
 	<script type="text/javascript" src="r/js/jq1.6.2.js"></script>
 	<script type="text/javascript" src="r/js/jq.ui.1.8.15.js"></script>
 	<script type="text/javascript" src="r/js/farbtastic.js"></script>
 	<script type="text/javascript" src="r/js/home.js"></script>
+	<meta name="Description" content="Home page du post-it générateur, avec formulaires de soumission de l'image et choix des couleurs nécessaire pour les calculs afin d'obtenir une prévisualisation du nombre de post it nécessaire a un wall of 'postit' !">
+	<meta name="Robots" content="all">
+	<meta name="Keywords" content="postit, war, générator, générateur, post, it, wall, mur, fenêtre, fenêtres, post-it, postti, couleurs, motif, pattern, colle, scotch, bureau">
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -96,7 +98,7 @@
 			<div class="bottomBox box">
 				<input type="hidden" name="MAX_FILE_SIZE" value="2097152">
 				<input type="hidden" name="options" class="jsonValueColorPostIt" value="">    
-				<input type="file" size="65" class="fileInput" name="image"><br />
+				<input type="file" size="55" class="fileInput" name="image"><br />
 				<p>
 					Nous vous conseillons de vous baser sur une image de petite tailles aux couleurs nativement réduite, 
 					sous peine d'avoir un résultat très moyen.
@@ -106,6 +108,9 @@
 				<input type="submit" class="inactive nextStep" value="Générer">
 			</form>
 		</section>
+
+	
+	<?php include "r/php/footer.php"; ?>
 		
 	</div>
 </body>

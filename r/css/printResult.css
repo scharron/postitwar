@@ -1,0 +1,22 @@
+.head,
+#original,
+footer,
+.post span,
+.block{display:none;}
+
+.colLeft{min-height:0px;}
+.containerPostIt{display:block;}
+
+.postit span{text-indent:0;font-weight:bold;}
+
+.hfp{float:left;display:block;}
+
+.console .line{font-size:12px;width:25%;}
+.console .line .post{margin:0 15px 15px 10px;width:5px;height:5px;border-width:5px;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform:rotate(0deg);
+rotation:0deg;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;}

@@ -1,5 +1,7 @@
+
 .postit{width:48px;height:48px;display:block;float:left;overflow:hidden;z-index:1;}
 .white{border:1px solid rgba(0,0,0,0);}
+.white span{display:none;}
 
 .dr{cursor:move;}
 .gridded .postit{border:1px dotted rgba(0,0,0,0.5);}
@@ -25,10 +27,18 @@
 -moz-box-shadow: 1px 3px 6px #444;
 box-shadow: 1px 3px 6px #444;
 }
+
+
 .editable .origin .wPostit .postit{
 -webkit-box-shadow:0 0 0 #fff;
 -moz-box-shadow:0 0 0 #fff;
 box-shadow:0 0 0 #fff;
+}
+
+.editable .origin .wPostit .ui-draggable-dragging{
+-webkit-box-shadow: 4px 4px 8px #444;
+-moz-box-shadow: 10px 10px 10px #444;
+box-shadow: 4px 4px 8px #444;
 }
 
 .editable .dr{
@@ -36,6 +46,8 @@ box-shadow:0 0 0 #fff;
 -moz-box-shadow: 1px 3px 6px #444;
 box-shadow: 1px 3px 6px #444;
 }
+
+.dr span{display:block;text-indent:-9999px;overflow:hidden;}
 .editable .dr span{display:block;width:100%;height:100%;}
 
 .editable .ui-draggable-dragging{z-index:999;
@@ -48,12 +60,12 @@ rotation:4deg;
 box-shadow: 4px 4px 8px #444;
 }
 
-.editable .trash{background:url(i/trash.png) no-repeat -10px 0;position:absolute;display:block;bottom:0;left:0px;width:80px;height:100px;z-index:4;opacity:0.5;filter:alpha(opacity=50);}
-.editable .toTrash{opacity:1;filter:alpha(opacity=100);}
+.editable .trash{background:url(i/trash.png) no-repeat -10px 0;position:absolute;display:block;bottom:10px;left:0px;width:80px;height:100px;z-index:4;opacity:0.5;filter:alpha(opacity=50);}
+.editable .trash:hover{opacity:1;filter:alpha(opacity=100);}
 
 .ui-draggable{position:relative;}
 .console{clear:both;border-top:1px solid #000;}
-.console .line{display:inline-block;width:100%;font-size:35px;font-weight:bold;text-align:right;}
+.console .line{display:inline-block;width:50%;font-size:35px;font-weight:bold;text-align:right;}
 .console .line .post{float:right;margin-left:10px;}
 .console .total{border-top:1px dotted #999;color:#999;font-size:12px;}
 .console .total b{font-weight:bold;font-size:14px;color:#000;}
@@ -66,6 +78,8 @@ box-shadow: 4px 4px 8px #444;
 .size{font-size:14px;}
 .size b{font-weight:bold;font-size:20px;color:#000;}
 .copyLink input{width:350px;padding:5px 0;border:1px dotted #999;}
+.last{border-bottom:none;}
+.last a{text-decoration:none;}
 
 .colRight{float:left;}
 .slider{width:200px;margin:10px 0 0 20px;float:left;padding-right:26px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
