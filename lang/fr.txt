@@ -1,0 +1,4 @@
+STEP = "Step"
+2 = "#new# Vous pouvez choisir jusqu'à 10 couleurs différentes ! Prenez-en une parmi celles proposés,
+			ou customisez-en une !"
+6 = "#new# Choisissez la couleur de vos munitions"
