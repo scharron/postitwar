@@ -26,9 +26,9 @@
 		
 		<section class="choose">
 		
-			<h3><strong>Etape 1 :</strong> <br />Choisissez la couleur de vos munitions </h3>
-			<p>Vous pouvez choisir jusqu'à 10 couleurs différentes ! Prenez-en une parmi celles proposés,
-			ou customisez-en une !</p>
+			<h3><strong>{tr id=STEP}Etape{/tr} 1 :</strong> <br />{tr id=6}Choisissez la couleur de vos munitions{/tr} </h3>
+			<p>{tr id=2}Vous pouvez choisir jusqu'à 10 couleurs différentes ! Prenez-en une parmi celles proposés,
+			ou customisez-en une !{/tr}</p>
 		
 			<div class="colLeft">
 				<h3>Choisissez <span>(double clique ou drag'n'drop)</span> :</h3>
