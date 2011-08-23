@@ -65,7 +65,7 @@ else
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Post-It Generator</title>
+	<title>{tr id=MAIN_TITLE}Post-it Générator !{/tr}</title>
 	<link rel="meta" type="application/rdf+xml" title="FOAF" href="/foaf.rdf">
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
@@ -132,7 +132,7 @@ if ($image !== false)
 <?php include "r/php/ttl.php"; ?>
 
 	<div class="head">
-		<h3>Taille des post-it</h3>
+		<h3>{tr id=POST_IT_SIZE}Taille des post-it{/tr}</h3>
 		<div class="slider" id="slider1"></div>
 	</div>
 
@@ -186,7 +186,7 @@ if ($image !== false)
 <div class="console">
 	
 	<div class="colLeft">
-		<h3>Vous devrez utiliser :</h3>
+		<h3>{tr id=SHOULD_USED}Vous devrez utiliser{/tr} :</h3>
 			<?php 
 
 				$total = 0;
@@ -220,13 +220,15 @@ if ($image !== false)
 				$temps = $heure.":".$minutes.":".$secondes;
 
 				echo '<div class="total">';
-				echo '<h3>Vous allez coûter à votre entreprise :</h3>';
-				echo 'Un total de <b>'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
-				echo 'Vous devrez mettre <b>'.$temps.'</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)';
+				echo '<h3>{tr id=COST}Vous allez coûter à votre entreprise{/tr} :</h3>';
+				echo sprintf(translate('TOTAL', 'Un total de <b>%d</b> Post-it, soit <b>%d €</b> en estimant 0.015€ par post-it.'),  $total, $coutTotal);
+				//echo '{tr id=TOTAL}Un total de{/tr} <b>'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
+				//echo 'Vous devrez mettre <b>'.$temps.'</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)';
+				echo sprintf(translate('TIME_AVG', 'Vous devrez mettre <b>%s</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)'),  $temps);
 				echo '</div>';
 			?>
 			
-		<div class="size block">Grille de <?php echo "<b>".$nbrCol."</b> post-it de large, <b>".$nbrLine."</b> de haut "; ?></div>
+		<div class="size block"><?php echo sprintf(translate('SIZE_AVG', 'Grille de <b>%d</b> post-it de large, <b>%d</b> de haut'), $nbrCol, $nbrLine); ?></div>
 	
 		
 		<!--
@@ -238,14 +240,14 @@ if ($image !== false)
 	</div>
 	<div class="colRight">
 		<form action="postit.php" method="post">
-			<h3>Bonus :</h3>
+			<h3>{tr id=BONUS}Bonus :{/tr}</h3>
 			<div class="block">
-				<label for="grid">Afficher la grille</label>
+				<label for="grid">{tr id=DISPLAY_GRID}Afficher la grille{/tr}</label>
 				<input id="grid" type="checkbox">
 			</div>
 			
 			<div class="block">
-				<label for="edit">Editer en live !</label>
+				<label for="edit">{tr id=LIVE_EDIT}Editer en live !{/tr}</label>
 				<input id="edit" type="checkbox">
 			</div>
 			
@@ -256,20 +258,20 @@ if ($image !== false)
 			
                         <?php if (isset($image["original"])) { ?>
 			<div class="block slideImgOriginal">
-				<span>Afficher l'image originale en surrimpression</span>
+				<span>{tr id=DISPLAY_ORIGINAL}Afficher l'image originale en surrimpression{/tr}</span>
 				<div class="wslide">
-					<span>Transparent</span><div class="slider" id="slider2"></div><span>Opaque</span>
+					<span>{tr id=TRASNPARENT}Transparent{/tr}</span><div class="slider" id="slider2"></div><span>{tr id=OPAQUE}Opaque{/tr}</span>
 				</div>
 			</div>
                         <?php } ?>
 
 			<div class="block copyLink">
-				<label for="urlImg">Copiez coller l'url de la page :</label>
+				<label for="urlImg">{tr id=COPY_PASTE}Copiez coller l'url de la page{/tr} :</label>
 				<input id="urlImg" class="reduceme" readonly="readonly" type="text" value='<?php $imageUrl ?>' />
 			</div>
 			
 			<div class="block miniature">
-				<label>Aperçu miniature :</label>
+				<label>{tr id=PREVIEW}Aperçu miniature{/tr} :</label>
 				<a href="http://postitwar.me/postit.php?id=<?php echo idify($image); ?>&download=1&size=2">
 					<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
 				</a>
@@ -277,10 +279,10 @@ if ($image !== false)
 			
 			<div class="block last">
 				<span class="nextStep print">
-					Imprimer
+					{tr id=PRINT}Imprimer{/tr}
 				</span>
 				<a href="index.php" class="nextStep">
-					Une nouvelle image !
+					{tr id=NEW_IMAGE}Une nouvelle image !{/tr}
 				</a>
 			</div>
 			

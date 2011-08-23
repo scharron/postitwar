@@ -26,41 +26,41 @@
 		
 		<section class="choose">
 		
-			<h3><strong>{tr id=STEP}Etape{/tr} 1 :</strong> <br />{tr id=6}Choisissez la couleur de vos munitions{/tr} </h3>
-			<p>{tr id=2}Vous pouvez choisir jusqu'à 10 couleurs différentes ! Prenez-en une parmi celles proposés,
+			<h3><strong>{tr id=STEP}Etape{/tr} 1 :</strong> <br />{tr id=CHOOSE_AMMO_COLOR}Choisissez la couleur de vos munitions{/tr} </h3>
+			<p>{tr id=CHOOSE_AMMO_COLOR_NOTE}Vous pouvez choisir jusqu'à 10 couleurs différentes ! Prenez-en une parmi celles proposés,
 			ou customisez-en une !{/tr}</p>
 		
 			<div class="colLeft">
-				<h3>Choisissez <span>(double clique ou drag'n'drop)</span> :</h3>
+				<h3>{tr id=CHOOSE}Choisissez{/tr} <span>{tr id=CHOOSE_NOTE1}(double clique ou drag'n'drop){/tr}</span> :</h3>
 				<div class="list">
-					<div data-color="1" data-valueColor="" class="post blue dr" title="Ajouter cette couleur">
+					<div data-color="1" data-valueColor="" class="post blue dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="2" data-valueColor="" class="post darkBlue dr" title="Ajouter cette couleur">
+					<div data-color="2" data-valueColor="" class="post darkBlue dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="3" data-valueColor="" class="post purple dr" title="Ajouter cette couleur">
+					<div data-color="3" data-valueColor="" class="post purple dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="4" data-valueColor="" class="post yellow dr" title="Ajouter cette couleur">
+					<div data-color="4" data-valueColor="" class="post yellow dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="5" data-valueColor="" class="post orange dr" title="Ajouter cette couleur">
+					<div data-color="5" data-valueColor="" class="post orange dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="6" data-valueColor="" class="post fushia dr" title="Ajouter cette couleur">
+					<div data-color="6" data-valueColor="" class="post fushia dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="7" data-valueColor="" class="post green dr" title="Ajouter cette couleur">
+					<div data-color="7" data-valueColor="" class="post green dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="8" data-valueColor="" class="post darkGreen dr" title="Ajouter cette couleur">
+					<div data-color="8" data-valueColor="" class="post darkGreen dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div data-color="9" data-valueColor="" class="post rose dr" title="Ajouter cette couleur">
+					<div data-color="9" data-valueColor="" class="post rose dr" title="{tr id=ADD_COLOR}Ajouter cette couleur{/tr}">
 						<span>+</span>
 					</div>
-					<div class="post addNew default" title="Créer une couleur">
+					<div class="post addNew default" title="{tr id=CREATE_COLOR}Créer une couleur{/tr}">
 						<span>...</span>
 					</div>
 				</div>
@@ -76,24 +76,24 @@
 				
 			</div>
 			<div class="colRight">
-				<h3>Votre sélection <span>(10 max)</span> :</h3>
+				<h3>{tr id=YOU_SELECTION}Votre sélection{/tr} <span>{tr id=MAX_SELECTION}(10 max){/tr}</span> :</h3>
 				<div class="list">
 					<div class="post default">
 						<span data-color="1">?</span>
 					</div>
 				</div>
-				<span class="hwjs warning">Vous avez atteint le nombre maximal de couleurs</span>
+				<span class="hwjs warning">{tr id=MAX_COLOR}Vous avez atteint le nombre maximal de couleurs{/tr}</span>
 				
-				<span class="nextStep inactive" title="Etape 2 : Choisissez une image"> Etape 2 ► </span>
+				<span class="nextStep inactive" title="{tr id=STEP}Etape{/tr} 2 : {tr id=CHOOSE_IMAGE}Choisissez une image{/tr}"> {tr id=STEP}Etape{/tr} 2 ► </span>
 				
-				<a title="demo video" href="about.php#video" class="nextStep demolink">Demo</a>
+				<a title="{tr id=DEMO_LINK_TITLE}demo video{/tr}" href="about.php#video" class="nextStep demolink">{tr id=DEMO_LINK_TEXT}Demo{/tr}</a>
 			</div>
 		</section>
 		
 		<section class="file hwjs">
 
-			<h3><strong>Etape 2 :</strong> <br />Choisissez une photo ou une image que vous voulez post-esthétiser ! </h3>
-			<p>Vous pouvez choisir n'importe quelle image, mais sachez qu'elle ne dépassera pas plus de 20 post-it de hauteur !</p>
+			<h3><strong>{tr id=STEP}Etape{/tr} 2 :</strong> <br />{tr id=STEP2_TITLE}Choisissez une photo ou une image que vous voulez post-esthétiser !{/tr}</h3>
+			<p>{tr id=STEP2_DESC}Vous pouvez choisir n'importe quelle image, mais sachez qu'elle ne dépassera pas plus de 30 post-it de hauteur !{/tr}</p>
 			
 			<div id="YourChoice" class="topBox box">
 			
@@ -106,8 +106,8 @@
 					<input type="hidden" name="wall_size" class="wall_size" value="20">
 					<input type="file" size="55" class="fileInput" name="image"><br />
 					<p>
-						Nous vous conseillons de vous baser sur une image de petite taille aux couleurs nativement réduite, 
-						sous peine d'avoir un résultat très moyen.
+						{tr id=UPLOAD_NOTE}Nous vous conseillons de vous baser sur une image de petite taille aux couleurs nativement réduite, 
+						sous peine d'avoir un résultat très moyen.{/tr}
 					</p>
 					<div class="wslide">
 					
@@ -116,14 +116,14 @@
 							<span class="futurHeight"></span>
 						</div>
 					
-						<label>Choisissez le nombre maximum de post-it de haut (1 post-it = 7,8 cm)</label>
-						<p class="explainHeight"><b class="ttlHeight">156</b> cm de haut<br /> pour <b class="nbr">20</b> post-it</p>
+						<label>{tr id=CHOOSE_MAX_HEIGHT}Choisissez le nombre maximum de post-it de haut (1 post-it = 7,8 cm){/tr}</label>
+						<p class="explainHeight"><b class="ttlHeight">156</b> {tr id=HEIGHT_INFO}cm de haut<br /> pour{/tr} <b class="nbr">20</b> {tr id=POST_IT}post-it{/tr}</p>
 						<div class="slider" id="slider3"></div>
 						
 					</div>
 				</div>
-				<input type="submit" class="nextStep prevStep" value="◄ Revenir en arrière">
-				<input type="submit" class="inactive nextStep" value="Générer">
+				<input type="submit" class="nextStep prevStep" value="◄ {tr id=GO_BACK}Revenir en arrière{/tr}">
+				<input type="submit" class="inactive nextStep" value="{tr id=GENERATE}Générer{/tr}">
 			</form>
 		</section>
 
