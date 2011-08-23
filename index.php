@@ -85,6 +85,8 @@
 				<span class="hwjs warning">Vous avez atteint le nombre maximal de couleurs</span>
 				
 				<span class="nextStep inactive" title="Etape 2 : Choisissez une image"> Etape 2 ► </span>
+				
+				<a title="demo video" href="about.php#video" class="nextStep demolink">Demo</a>
 			</div>
 		</section>
 		
