@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond $1 !^(rooter\.php|robots\.txt|r)
+RewriteRule ^(.*)$ rooter.php?f=$1 [NC,L]
