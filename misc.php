@@ -169,6 +169,7 @@ function download($image, $size)
 function encode_original($filename)
 {
   $imgbinary = fread(fopen($filename, "r"), filesize($filename));
+  $filetype = filetype($filename);
   $str = 'data:image/' . $filetype . ';base64,' . base64_encode($imgbinary);
   return $str;
 }
