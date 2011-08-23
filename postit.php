@@ -143,6 +143,8 @@ if ($image !== false)
         if (isset($image["original"]))
 	  echo '<img id="original" src="'.encode_original($image["original"]).'"/>';
 	
+	$aleaShadow = ''; // Undefined variable line 155
+	
 	for($ligne=0;$ligne<$nbrLine;$ligne++){
 		for($col=0;$col<$nbrCol;$col++){
 			if($image["image"][$ligne][$col]!=$nbrColors){
