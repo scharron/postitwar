@@ -45,7 +45,19 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
       $image = postitify($filename, $options);
     }
   }
+  
+  $imageUrl = 'http://postitwar.me/postit.php?id=' . idify($image);
+  $_SESSION['imageUrl'] = $imageUrl;
 }
+elseif(isset($_SESSION['imageUrl']))
+{
+	header('Location: ' . $_SESSION['imageUrl']);
+}
+else
+{
+	_404();
+}
+
 ?>
 
 
@@ -253,7 +265,7 @@ if ($image !== false)
 
 			<div class="block copyLink">
 				<label for="urlImg">Copiez coller l'url de la page :</label>
-				<input id="urlImg" class="reduceme" readonly="readonly" type="text" value='http://postitwar.me/postit.php?id=<?php echo idify($image); ?>' />
+				<input id="urlImg" class="reduceme" readonly="readonly" type="text" value='<?php $imageUrl ?>' />
 			</div>
 			
 			<div class="block miniature">
