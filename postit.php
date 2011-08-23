@@ -285,8 +285,9 @@ if ($image !== false)
 <script type="text/javascript" charset="utf-8">
 
 function bitly_answer(elt, data){
-  if (data.errorCode == 0)
+   if(data.errorCode == 0 && data.results["error"] == undefined){
     elt.value = data.results[elt.value].shortUrl;
+   }
 }
 
 $(function(){
