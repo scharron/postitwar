@@ -53,7 +53,7 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Post-It War Generator</title>
+	<title>Post-It Generator</title>
 	<link rel="meta" type="application/rdf+xml" title="FOAF" href="/foaf.rdf">
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />

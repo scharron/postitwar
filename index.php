@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Post-It War Generator</title>
+	<title>Post-It Generator</title>
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
 	<link rel="stylesheet" type="text/css" href="r/css/home.css" />
@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="r/js/home.js"></script>
 	<meta name="Description" content="Home page du post-it générateur, avec formulaires de soumission de l'image et choix des couleurs nécessaire pour les calculs afin d'obtenir une prévisualisation du nombre de post it nécessaire a un wall of 'postit' !">
 	<meta name="Robots" content="all">
-	<meta name="Keywords" content="postit, war, générator, générateur, post, it, wall, mur, fenêtre, fenêtres, post-it, postti, couleurs, motif, pattern, colle, scotch, bureau">
+	<meta name="Keywords" content="postit, générator, générateur, post, it, wall, mur, fenêtre, fenêtres, post-it, postti, couleurs, motif, pattern, colle, scotch, bureau">
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
