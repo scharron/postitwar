@@ -37,6 +37,7 @@ p{font-size:14px;}
 .fb_iframe_widget{position:relative;top:-10px;}
 .twitter-share-button{float:left;margin-right:10px;top:-1px;position:relative;}
 .sn{clear:both;width:100%;display:inline-block;}
+.clear{clear:both;}
 
 /* Layout */
 .colLeft{float:left;width:400px;border-right:1px dotted #999;min-height:500px;}
