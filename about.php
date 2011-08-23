@@ -44,6 +44,12 @@
 		</p>
 		
 		<ul>
+			<li style="text-align:center;">
+				<span class="ask">Pour commencer... :</span>
+				<div>
+				<object width="480" height="390"><param name="movie" value="http://www.youtube.com/v/tPKEpBInX8E?version=3&amp;hl=fr_FR&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/tPKEpBInX8E?version=3&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+				</div>
+			</li>
 			<li>
 				<span class="ask">Mon image est toute blanche ?</span>
 				<span class="answer">
