@@ -267,7 +267,7 @@ if ($image !== false)
 
 			<div class="block copyLink">
 				<label for="urlImg">{tr id=COPY_PASTE}Copiez coller l'url de la page{/tr} :</label>
-				<input id="urlImg" class="reduceme" readonly="readonly" type="text" value='<?php $imageUrl ?>' />
+				<input id="urlImg" class="reduceme" readonly="readonly" type="text" value='<?php echo $imageUrl ?>' />
 			</div>
 			
 			<div class="block miniature">
@@ -301,6 +301,7 @@ if ($image !== false)
 <script type="text/javascript" charset="utf-8">
 
 function bitly_answer(elt, data){
+console.log(data);
    if(data.errorCode == 0 && data.results["error"] == undefined){
     elt.value = data.results[elt.value].shortUrl;
    }
