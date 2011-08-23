@@ -257,7 +257,7 @@ if ($image !== false)
 			<div class="block miniature">
 				<label>Aperçu miniature :</label>
 				<a href="http://postitwar.me/postit.php?id=<?php echo idify($image); ?>&download=1&size=2">
-					<img src="postit.php?id=<?php echo idify($image); ?>"/>
+					<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
 				</a>
 			</div>
 			
