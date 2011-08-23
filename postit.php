@@ -285,12 +285,17 @@ if ($image !== false)
 <script type="text/javascript" charset="utf-8">
 
 function bitly_answer(elt, data){
-  elt.value = data.results[elt.value].shortUrl;
+  if (data.errorCode == 0)
+    elt.value = data.results[elt.value].shortUrl;
 }
 
 $(function(){
   $.each($(".reduceme"), function(idx, elt){
-    BitlyClient.shorten(elt.value, function(data){ bitly_answer(elt, data); });
+    BitlyClient.shorten(
+		elt.value, function(data){
+			bitly_answer(elt,data);
+		}
+	);
   });
 });
 </script>
