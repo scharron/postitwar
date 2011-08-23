@@ -53,7 +53,7 @@ if ((isset($_FILES["image"]) && isset($_POST["options"])) || isset($_GET["id"]) 
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Post-It War Generator</title>
+	<title>Post-It Generator</title>
 	<link rel="meta" type="application/rdf+xml" title="FOAF" href="/foaf.rdf">
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
@@ -259,7 +259,7 @@ if ($image !== false)
 			<div class="block miniature">
 				<label>Aperçu miniature :</label>
 				<a href="http://postitwar.me/postit.php?id=<?php echo idify($image); ?>&download=1&size=2">
-					<img src="postit.php?id=<?php echo idify($image); ?>"/>
+					<img src="postit.php?id=<?php echo idify($image); ?>&download=1&size=2"/>
 				</a>
 			</div>
 			
@@ -287,12 +287,18 @@ if ($image !== false)
 <script type="text/javascript" charset="utf-8">
 
 function bitly_answer(elt, data){
-  elt.value = data.results[elt.value].shortUrl;
+   if(data.errorCode == 0 && data.results["error"] == undefined){
+    elt.value = data.results[elt.value].shortUrl;
+   }
 }
 
 $(function(){
   $.each($(".reduceme"), function(idx, elt){
-    BitlyClient.shorten(elt.value, function(data){ bitly_answer(elt, data); });
+    BitlyClient.shorten(
+		elt.value, function(data){
+			bitly_answer(elt,data);
+		}
+	);
   });
 });
 </script>

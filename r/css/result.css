@@ -82,6 +82,8 @@ box-shadow: 4px 4px 8px #444;
 .last{border-bottom:none;}
 .last a{text-decoration:none;}
 .miniature label{padding-right:20px;}
+.miniature a,
+.miniature a img{border:none;}
 
 
 .colRight{float:left;}

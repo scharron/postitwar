@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Post-It War Generator</title>
+	<title>Post-It Generator</title>
 	<link href="favicon.ico" type="image/x-icon" rel="icon" />
 	<link rel="stylesheet" type="text/css" href="r/css/g.css" />
 	<link rel="stylesheet" type="text/css" href="r/css/about.css" />
@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="r/js/farbtastic.js"></script>
 	<meta name="Description" content="A propos du post-it générator">
 	<meta name="Robots" content="all">
-	<meta name="Keywords" content="postit, war, générator, générateur, post, it, propos">
+	<meta name="Keywords" content="postit, générator, générateur, post, it, propos">
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -44,6 +44,12 @@
 		</p>
 		
 		<ul>
+			<li style="text-align:center;">
+				<span class="ask">Pour commencer... :</span>
+				<div>
+				<object width="480" height="390"><param name="movie" value="http://www.youtube.com/v/tPKEpBInX8E?version=3&amp;hl=fr_FR&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/tPKEpBInX8E?version=3&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+				</div>
+			</li>
 			<li>
 				<span class="ask">Mon image est toute blanche ?</span>
 				<span class="answer">

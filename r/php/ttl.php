@@ -13,4 +13,17 @@
 	
 </div>
 
+<div>
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-8560042762072888";
+	/* postitwar.me */
+	google_ad_slot = "9908596741";
+	google_ad_width = 728;
+	google_ad_height = 15;
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</div>
+
 
