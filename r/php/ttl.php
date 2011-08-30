@@ -14,9 +14,8 @@ $lang = array(
 	<div class="sn">
 		<div style="float:right;">
 			<?php
-				foreach($lang as $iso => $text)
-				{
-					echo '<a href="r/changeLang.php?lang=' . $iso . '" class="lang_link ' . ( $lang == $iso ? ' lang_selected' : '' ) . '">' . $text . '</a> ';
+				foreach($lang as $iso => $text){
+					echo '<a class="'.$iso.'" href="r/changeLang.php?lang='.$iso.'" class="lang_link '.($lang == $iso ? ' lang_selected' : '').'">'.$text.'</a> ';
 				}
 			?>
 		</div>
