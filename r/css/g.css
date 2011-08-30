@@ -114,6 +114,11 @@ filter:alpha(opacity=0);
 box-shadow:5px 5px 10px #999; 
 }
 
+.trads{float:right;}
+.trads a{float:left;border:5px solid #fff;width:16px;height:11px;background:url(i/flags.png) no-repeat 0 0;text-indent:-9999px;overflow:hidden;text-decoration:none;}
+.trads a.active{border-color:#f00;}
+.trads .fr{background-position:-10px -39px;}
+.trads .en{background-position:-66px -39px;}
 
 .colorwell span{display:block;width:150px;height:150px;cursor:move;
 background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%, rgba(0,0,0,0) 100%);

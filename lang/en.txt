@@ -58,7 +58,9 @@ STEP2_DESC = "You can choose any picture, but know it will not exceed more than 
 STEP2_TITLE = "Choose a photo or image you want to generate !"
 TIME_AVG = "#new# Vous devrez mettre <b>%s</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)"
 TOTAL = "#new# Total of <b>%d</b> Post-it note for <b>%d €</b>, based on 0.015€ per post-it note."
+TRAD_DEV = "Traduction system"
 TRASNPARENT = "Transparent"
 UPLOAD_NOTE = "#new# Nous vous conseillons de vous baser sur une image de petite taille aux couleurs nativement réduite, 
 						sous peine d'avoir un résultat très moyen."
+URL_FB = "en_US"
 YOU_SELECTION = "Your selection"
