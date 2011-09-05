@@ -12,11 +12,18 @@ $lang = array(
 	<h2>{tr id=MAIN_DESCRIPTION}Transformer n'importe quelle image en un festival de Post-It !{/tr}</h2>
 	
 	<div class="sn">
-		<div style="float:right;">
+		<div class="trads">
 			<?php
-				foreach($lang as $iso => $text)
-				{
-					echo '<a href="r/changeLang.php?lang=' . $iso . '" class="lang_link ' . ( $lang == $iso ? ' lang_selected' : '' ) . '">' . $text . '</a> ';
+				foreach($lang as $iso => $text){
+					if(isset($_SESSION['lang'])){
+						if($_SESSION['lang'] == $iso){
+							echo '<a class="active '.$iso.'" href="r/changeLang.php?lang='.$iso.'" class="lang_link '.($lang == $iso ? ' lang_selected' : '').'">'.$text.'</a> ';
+						}else{
+							echo '<a class="'.$iso.'" href="r/changeLang.php?lang='.$iso.'" class="lang_link '.($lang == $iso ? ' lang_selected' : '').'">'.$text.'</a> ';
+						}
+					}else{
+						echo '<a class="'.$iso.'" href="r/changeLang.php?lang='.$iso.'" class="lang_link '.($lang == $iso ? ' lang_selected' : '').'">'.$text.'</a> ';
+					}
 				}
 			?>
 		</div>
@@ -24,7 +31,7 @@ $lang = array(
 		<g:plusone size="small"></g:plusone>
 		<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://postitwar.me" data-count="none" data-lang="fr">Tweeter</a>
 		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/fr_FR/all.js#appId=235341769843857&amp;xfbml=1"></script>
+		<script src="http://connect.facebook.net/{tr id=URL_FB}fr_FR{/tr}/all.js#appId=235341769843857&amp;xfbml=1"></script>
 		<fb:like href="" send="true" layout="button_count" width="350" show_faces="false" action="like" font=""></fb:like>
 	</div>
 	

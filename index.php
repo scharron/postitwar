@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="<?php echo $_SESSION['lang']; ?>">
 <head>
 	<meta charset="utf-8">
 	<title>Post-It Generator</title>

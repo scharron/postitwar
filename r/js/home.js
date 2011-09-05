@@ -65,7 +65,7 @@ function reDispatchAll(VisseElt){
 	}
 	
 	if($(".colRight .ui-droppable").children().not("default").length==1){
-		$(".choose .nextStep").addClass("inactive");
+		$(".choose .nextStep:not(.demolink)").addClass("inactive");
 	}
 	
 	initDrag();

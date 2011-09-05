@@ -35,9 +35,6 @@
 			{tr id=ABOUT_2}Le <b>post-it war générator</b> est l'outil qui va vous permettre de remporter cette guerre haut la main !
 			Choisissez le logo ou le pixel art de votre choix et transformer le automatiquement en une mosaïque de post-it aux dimensions concrétement applicable facilement !{/tr}
 		</p>
-		<p>	
-			{tr id=ABOUT_3}Personne n'est oublié dans le monde de l'entreprise, car vous pourrez {/tr}
-		</p>
 		<p>
 			{tr id=ABOUT_4}Evidemment, ce serait présomptueux d'affirmer que ce service est parfait... Aussi, 
 			voici les questions que vous pouvez vous posez, et leur réponses :{/tr}
