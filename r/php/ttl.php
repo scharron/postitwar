@@ -2,7 +2,8 @@
 
 $lang = array(
 	'fr' => 'Français',
-	'en' => 'English'
+	'en' => 'English',
+	'jp' => 'Japanese',
 );
 
 ?>
@@ -29,7 +30,7 @@ $lang = array(
 		</div>
 		
 		<g:plusone size="small"></g:plusone>
-		<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://postitwar.me" data-count="none" data-lang="fr">Tweeter</a>
+		<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://postitwar.me" data-count="none" data-lang="{tr id=PLUS_1}fr{/tr}">Tweeter</a>
 		<div id="fb-root"></div>
 		<script src="http://connect.facebook.net/{tr id=URL_FB}fr_FR{/tr}/all.js#appId=235341769843857&amp;xfbml=1"></script>
 		<fb:like href="" send="true" layout="button_count" width="350" show_faces="false" action="like" font=""></fb:like>
