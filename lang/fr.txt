@@ -1,4 +1,4 @@
-ABOUT_1 = "<a href=http://www.lavoixeco.com/actualite/Secteurs_activites/Commerces_et_Distribution/2011/08/20/article_guerre-des-post-it-apres-les-fenetres-qu.shtml>Phénomène à la mode</a>, 
+﻿ABOUT_1 = "<a href=http://www.lavoixeco.com/actualite/Secteurs_activites/Commerces_et_Distribution/2011/08/20/article_guerre-des-post-it-apres-les-fenetres-qu.shtml>Phénomène à la mode</a>, 
 			la post-it war consiste a coller sur les fenêtres (ou mur) de son entreprise des motifs de post-it, 
 			et de surenchérir par rapport a ses voisins !"
 ABOUT_2 = "Le <b>post-it war générator</b> est l'outil qui va vous permettre de remporter cette guerre haut la main !
@@ -59,7 +59,7 @@ STEP2_TITLE = "Choisissez une photo ou une image que vous voulez post-esthétise
 TIME_AVG = "Vous devrez mettre <b>%s</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)"
 TOTAL = "Un total de <b>%d</b> Post-it, soit <b>%d €</b> en estimant 0.015€ par post-it."
 TRAD_DEV = "Système de traduction"
-UPLOAD_NOTE = "Nous vous conseillons de vous baser sur une image de petite taille aux couleurs nativement réduite, 
-						sous peine d'avoir un résultat très moyen."
+UPLOAD_NOTE = "Nous vous conseillons de vous baser sur une image de petite taille aux couleurs nativement réduite, sous peine d'avoir un résultat très moyen."
 URL_FB = "fr_FR"
+PLUS_1 = "fr"
 YOU_SELECTION = "Votre sélection"
