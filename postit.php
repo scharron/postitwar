@@ -62,7 +62,7 @@ else
 
 
 <!doctype html>
-<html lang="fr">
+<html lang="<?php echo $_SESSION['lang']; ?>">
 <head>
 	<meta charset="utf-8">
 	<title>{tr id=MAIN_TITLE}Post-it Générator !{/tr}</title>
