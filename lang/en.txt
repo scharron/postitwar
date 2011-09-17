@@ -1,4 +1,4 @@
-ABOUT_1 = "<a target=blank href=http://www.geekosystem.com/french-post-it-note-war/>A fashion phenomenon</a>, 
+﻿ABOUT_1 = "<a target=blank href=http://www.geekosystem.com/french-post-it-note-war/>A fashion phenomenon</a>, 
 The purpose of the Post-it war is to compete with your neighbours in recreating the most impressive pixelated images with coloured post-it notes sticked on your company’s windows or walls!"
 ABOUT_2 = "The <b>post-it war generator</b> is the tool that will allow you to win this war hands down! After choosing the logo or the pixel art of your choice, the tool will transform it into a mosaic of post-it notes, easy to be reproduced!"
 ABOUT_4 = "Obviously, it would be presomptuous to pretend this service is perfect… But we have already thought of questions you might have. Have a look at our answers below:"
@@ -60,4 +60,5 @@ TRAD_DEV = "Translation system"
 TRASNPARENT = "#new# Transparent"
 UPLOAD_NOTE = "Our advice: use a small picture with a limited number of colours, otherwise you might not have a great result."
 URL_FB = "en_UK"
+PLUS_1 = "fr"
 YOU_SELECTION = "Your selection"
