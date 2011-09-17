@@ -57,7 +57,7 @@ STEP = "Etape"
 STEP2_DESC = "Vous pouvez choisir n'importe quelle image, mais sachez qu'elle ne dépassera pas plus de 30 post-it de hauteur !"
 STEP2_TITLE = "Choisissez une photo ou une image que vous voulez post-esthétiser !"
 TIME_AVG = "Vous devrez mettre <b>%s</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)"
-TOTAL = "Un total de <b>%d</b> Post-it, soit <b>%d €</b> en estimant 0.015€ par post-it."
+TOTAL = "Un total de <b>%d</b> Post-it, soit <b>%f €</b> en estimant 0.015€ par post-it."
 TRAD_DEV = "Système de traduction"
 UPLOAD_NOTE = "Nous vous conseillons de vous baser sur une image de petite taille aux couleurs nativement réduite, 
 						sous peine d'avoir un résultat très moyen."

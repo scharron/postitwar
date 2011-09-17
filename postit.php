@@ -221,7 +221,7 @@ if ($image !== false)
 
 				echo '<div class="total">';
 				echo '<h3>{tr id=COST}Vous allez coûter à votre entreprise{/tr} :</h3>';
-				echo sprintf(translate('TOTAL', 'Un total de <b>%d</b> Post-it, soit <b>%d €</b> en estimant 0.015€ par post-it.'),  $total, $coutTotal);
+				echo sprintf(translate('TOTAL', 'Un total de <b>%d</b> Post-it, soit <b>%f €</b> en estimant 0.015€ par post-it.'),  $total, $coutTotal);
 				//echo '{tr id=TOTAL}Un total de{/tr} <b>'.$total.'</b> Post-it, soit <b>'.$coutTotal.' €</b> en estimant 0.015€ par post-it.<br />';
 				//echo 'Vous devrez mettre <b>'.$temps.'</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)';
 				echo sprintf(translate('TIME_AVG', 'Vous devrez mettre <b>%s</b> pour le faire (pose de scotch inclus, personne seule, en se basant sur 40 secondes par post-it)'),  $temps);
