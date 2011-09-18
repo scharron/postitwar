@@ -4,6 +4,7 @@ $lang = array(
 	'fr' => 'Français',
 	'en' => 'English',
 	'jp' => 'Japanese',
+	'pl' => 'Polish',
 );
 
 ?>

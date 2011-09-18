@@ -25,7 +25,7 @@
 	<?php include "r/php/ttl.php"; ?>
 		
 		<section class="choose">
-		
+
 			<h3><strong>{tr id=STEP}Etape{/tr} 1 :</strong> <br />{tr id=CHOOSE_AMMO_COLOR}Choisissez la couleur de vos munitions{/tr} </h3>
 			<p>{tr id=CHOOSE_AMMO_COLOR_NOTE}Vous pouvez choisir jusqu'à 10 couleurs différentes ! Prenez-en une parmi celles proposés,
 			ou customisez-en une !{/tr}</p>
