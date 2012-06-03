@@ -10,4 +10,3 @@ However, excepted some hardcoded absolute links and a lot of PHP warning, it cou
 You can try this on http://postitwar.me .
 
 Have fun !
-

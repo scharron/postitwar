@@ -120,7 +120,11 @@ box-shadow:5px 5px 10px #999;
 .trads .fr{background-position:-10px -39px;}
 .trads .en{background-position:-66px -39px;}
 .trads .jp{background-position:-38px -21px;}
+.trads .de{background-position:-66px -3px;}
+.trads .es{background-position:-66px -21px;}
 .trads .pl{background-position:-38px -39px;}
+.trads .sv{background-position:-10px -3px;}
+
 
 .colorwell span{display:block;width:150px;height:150px;cursor:move;
 background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%, rgba(0,0,0,0) 100%);
